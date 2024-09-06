@@ -1,0 +1,509 @@
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+  }
+.slider-container2 {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border: #666;
+    background-color: #d2e5eb;
+  }
+
+  .slider-container2 h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 24px; /* Increase the font size */
+    font-weight: bold; /* Make the font bold */
+    color: #333; /* Change the text color */
+  }
+  
+  .slider {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+  }
+  .prev {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color:  #00fabd;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.next {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-color:  #00fabd;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+
+  .card-slide {
+    display: flex;
+    justify-content: space-between;
+    flex: 0 0 100%;
+  }
+  
+  .car-card {
+    width: 32%;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .car-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+  }
+
+  .primary-image {
+    display: block;
+  }
+  
+  .hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+  
+  .car-image:hover .primary-image {
+    display: none;
+  }
+  
+  .car-image:hover .hover-image {
+    display: block;
+  }
+
+  .car-image {
+    position: relative;
+  }
+  
+  .label {
+    position: absolute;
+    top: 15px;
+    left: -15px; 
+    width: 100px;
+    height: 35x;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    transform: rotate(-45deg);
+    font-weight: bold;
+    background-color: transparent; 
+  }
+
+  .car-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .car-details {
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .car-details h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .car-details p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .condition {
+    color: #666;
+  }
+  
+  .location {
+    color: #666;
+  }
+  
+  .price-btn {
+    background-color:  #00fabd;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 200;
+  }
+  
+  .price-btn:hover {
+    background-color:  #00fabd;
+  }
+  
+  .icons {
+    margin-top: 10px;
+  }
+  
+  .icons a {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #666;
+  }
+  
+  .icons a:hover {
+    color:  #00fabd;
+  }
+/* on small creen */
+@media (max-width: 767px) {
+  .slider {
+      display: flex;
+      overflow: hidden; /* Hide overflow to prevent showing multiple cards at once */
+      position: relative; /* Ensure proper positioning for slider controls */
+  }
+
+  .card-slide {
+      display: flex;
+      flex-direction: row; /* Align cards in a row */
+      transition: transform 0.3s ease-in-out; /* Smooth transition for sliding */
+      width: 100%; /* Each slide takes full width */
+  }
+
+  .car-card {
+      flex: 0 0 100%; /* Each card takes full width of the slider */
+      box-sizing: border-box; /* Include padding and border in width calculation */
+  }
+
+  .slider-controls {
+      display: flex;
+      justify-content: space-between; /* Space out the controls */
+      position: absolute; /* Position controls absolutely within the slider */
+      width: 100%; /* Full width for the controls */
+      top: 50%; /* Center controls vertically */
+      transform: translateY(-50%); /* Adjust positioning */
+      z-index: 10; /* Ensure controls are above other elements */
+  }
+
+  .prev, .next {
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+      color: white; /* White text color */
+      border: none; /* Remove default border */
+      padding: 10px; /* Add padding */
+      cursor: pointer; /* Change cursor on hover */
+  }
+
+  .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+  }
+
+  .icons {
+      justify-content: flex-start; /* Align icons to start on small screens */
+      margin-bottom: 5px; /* Ensure space below icons */
+  }
+
+  /* Hide pagination or additional controls if present */
+  .slider-controls {
+      display: flex; /* Ensure controls are visible */
+  }
+}
+
+ 
+.highlighted-items-carousel h2{
+  margin-left: 20px;
+  font-style: italic;
+  color: #00fabd;
+  margin-bottom: 10px;
+}
+.vehicle-card {
+   flex: 1 0 30%; /* Adjust width to fit 3 cards per slide on large screens */
+   max-width: 30%; /* Set max width to ensure cards fit in a row */
+   min-height: 350px; /* Adjust this value as needed */
+   box-sizing: border-box;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 0 10px; /* Add margin between cards */
+   padding: 10px; /* Adjust padding to avoid cutting off content */
+   overflow: hidden; /* To ensure no overflowing content */
+}
+
+
+/* Car image styles */
+.vehicle-thumbnail {
+   flex: 1;
+   margin-right: 15px; /* Space between image and details */
+   position: relative;
+   display: inline-block;
+}
+
+.vehicle-thumbnail img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover; /* Ensure image covers the area */
+   border-radius: 5px;
+}
+
+.label {
+   position: absolute;
+   top: 15px;
+   left: -20px;
+   width: 100px;
+   height: 35px;
+   color: white;
+   text-align: center;
+   line-height: 35px;
+   transform: rotate(-45deg);
+   font-weight: bold;
+   background-color: transparent;
+}
+
+.gold {
+   background-color: #ffc107; /* Gold color */
+}
+
+.silver {
+   background-color: #c0c0c0; /* Silver color */
+}
+
+.bronze {
+   background-color: #00fabd; /* Bronze color */
+}
+
+/* Tag styles */
+.tag {
+   position: absolute;
+   top: 10px;
+   left: 10px;
+   background-color: rgba(0, 0, 0, 0.7); /* Dark background */
+   color: #fff; /* White text */
+   padding: 5px 10px;
+   border-radius: 5px;
+   font-size: 0.9rem; /* Adjust font size as needed */
+   font-weight: bold;
+}
+
+/* Car details styles */
+.vehicle-details {
+   flex: 2;
+   display: flex;
+   flex-direction: column;
+   justify-content: center; /* Center vertically in available space */
+   align-items: center; /* Center align all elements */
+   width: 100%; /* Ensure it uses full width inside card */
+   text-align: center; /* Center text alignment */
+   margin-top: 10px; /* Optional: Slight margin to separate image from details */
+}
+
+/* Title and description styles */
+.vehicle-details h3 {
+   font-size: 1.2rem; /* Medium font size for title */
+   margin: 0 0 5px; /* Space below title */
+   overflow: hidden;
+   text-overflow: ellipsis; /* Handle overflow */
+   white-space: nowrap; /* Prevent wrapping */
+}
+
+.vehicle-details p {
+   font-size: 1rem; /* Medium font size for paragraph */
+   margin: 0 0 5px; /* Space below paragraph */
+   overflow: hidden;
+   text-overflow: ellipsis; /* Handle overflow */
+   white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Price button styles */
+.price-btn {
+   display: inline-block;
+   background-color: #00d084; /* Matching the green color from Sankhoo */
+   color: #fff; /* White text color */
+   border: none;
+   padding: 8px 15px; /* Adjusted padding */
+   font-size: 1rem; /* Medium font size */
+   border-radius: 5px;
+   cursor: pointer;
+   margin-top: 10px;
+   text-align: center;
+}
+.price-btn:hover {
+   background-color: #00b074; /* Slightly darker green on hover */
+}
+
+/* Icon styles inside car details */
+.icons {
+   margin-top: 5px; /* Reduced margin to bring closer to the button */
+   display: flex;
+   justify-content: center; /* Center icons */
+   gap: 10px; /* Consistent spacing between icons */
+   margin-bottom: 10px; /* Ensure some space below icons */
+}
+
+.icons a {
+   font-size: 1rem; /* Medium font size for icons */
+   color: #333;
+   text-decoration: none; /* Remove underline from icons */
+}
+
+/* Pagination styles */
+.pagination {
+   text-align: center;
+   margin-top: 10px; /* Adjusted to reduce space above pagination */
+   margin-bottom: 20px; /* Add consistent space below pagination */
+   padding: 0; /* Ensure no additional padding */
+}
+
+.pagination-button {
+   background-color: #ddd;
+   border: none;
+   padding: 10px;
+   margin: 5px;
+   cursor: pointer;
+   font-size: 16px;
+   border-radius: 5px;
+}
+
+.pagination-button:hover {
+   background-color: #bbb;
+}
+
+.pagination-button.active {
+   background-color: #555;
+   color: #fff;
+}
+
+/* Flexbox layout for large screens */
+.item-card-slide {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 0; /* Remove gap between cards */
+   margin: 0; /* Remove margin around the track */
+   align-items: flex-start; /* Align items to the start of the container */
+}
+
+/* Remove extra space by controlling parent container */
+.item-vertical-slider {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 0; /* Reset margin to zero */
+   padding: 0; /* Reset padding to zero */
+}
+
+/* Small screen adjustments */
+@media (max-width: 767px) {
+   .vehicle-card {
+       flex: 1 0 100%; /* Full width on small screens */
+       max-width: 100%; /* Override to ensure full width */
+       flex-direction: row; /* Image on the left, details on the right */
+       align-items: flex-start; /* Align items at the top */
+       margin: 10px 0; /* Add vertical spacing between cards */
+       padding: 10px; /* Adjust padding to avoid cutting off content */
+       height: auto; /* Allow height to adjust based on content */
+   }
+
+   .icons {
+       justify-content: flex-start; /* Align icons to start on small screens */
+       margin-bottom: 5px; /* Ensure some space below icons */
+   }
+
+   .pagination {
+       display: none; /* Hide pagination on small screens */
+   }
+}
+
+/* Large screen adjustments */
+@media (min-width: 992px) {
+   .vehicle-card {
+       flex: 1 0 30%; /* Three cards per row */
+       max-width: 30%;
+       height: 400px; /* Adjust the height as needed */
+       margin-bottom: 20px; /* Ensure there's a bit of space between cards and pagination */
+   }
+
+   .price-btn {
+       margin-top: 10px; /* Adjust space between elements */
+   }
+
+   .icons {
+       justify-content: center; /* Center icons */
+       margin-bottom: 10px; /* Add space below icons */
+   }
+
+   .pagination {
+       margin-top: 20px; /* More consistent space between cards and pagination on large screens */
+       margin-bottom: 20px; /* Ensure some space below pagination */
+   }
+}
+
+
+/* Large screen adjustments */
+@media (min-width: 992px) {
+   .vehicle-card {
+       flex: 1 0 30%; /* Three cards per row */
+       max-width: 30%;
+       height: 400px; /* Adjust the height as needed */
+       margin-bottom: 20px; /* Ensure there's a bit of space between cards and pagination */
+   }
+
+   .price-btn {
+       margin-top: 10px; /* Adjust space between elements */
+   }
+
+   .icons {
+       justify-content: center; /* Center icons */
+       margin-bottom: 10px; /* Add space below icons */
+   }
+
+   .pagination {
+       margin-top: 20px; /* More consistent space between cards and pagination on large screens */
+       margin-bottom: 20px; /* Ensure some space below pagination */
+   }
+}
+
+
+/* Large screen adjustments */
+@media (min-width: 992px) {
+    .car-card {
+        flex: 1 0 30%; /* Three cards per row */
+        max-width: 30%;
+        height: 400px; /* Adjust the height as needed */
+        margin-bottom: 20px; /* Ensure there's a bit of space between cards and pagination */
+    }
+
+    .price-btn {
+        margin-top: 10px; /* Adjust space between elements */
+    }
+
+    .icons {
+        justify-content: center; /* Center icons */
+        margin-bottom: 10px; /* Add space below icons */
+    }
+
+    .slider-controls {
+        margin-top: 20px; /* More consistent space between cards and pagination on large screens */
+        margin-bottom: 20px; /* Ensure some space below pagination */
+    }
+}
+
+
+  

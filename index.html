@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sankhco</title>
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slides.css">
+</head>
+<body> 
+    <!-- header -->
+  <header>
+     <div class="logo"><img src="Assets/images/logo-removebg-preview.png" alt=""width="200px" height="100px">
+    </div>
+
+     <ul class="navbar" id="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cars.html">Cars</a></li>
+        <li><a href="contacts.html">Contact Us</a></li>
+
+        <li><a href="addyourcar.html">
+            <i class="fas fa-car"></i>ADD YOU CAR</a></li>
+     
+        <li><a href="javascript:void(0)" class="sign-up" onclick="openPopup()">
+            <i class="fas fa-user-plus"></i>Create Account</a>
+        </li>
+    
+    </ul>
+
+     <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+      <!-- Image Slider -->
+      <div class="slider-container">
+        <div class="slide active">
+            <img src="Assets/images/back home.jpg" alt="Car 1" width="100%" height="100%">
+            <div class="text-content">
+                <h2>Our Customers Love Us</h2>
+                <p>Hear from our satisfied customers.We pride ourselves on excellent service and top-quality vehicles. <br> See why our customers keep coming back.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="Assets/images/AudiHomePage.jpeg" alt="Car 2" width="100%" height="100%">
+            <div class="text-content">
+                <h2>Your Car Rental Hub: <br> Easy, Fast, Reliable.</h2>
+                <p>Connecting you to the best rental deals from trusted providers.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+        </div>
+    
+        <div class="controls">
+            <span class="prev">&#10094;</span>
+            <span class="next">&#10095;</span>
+        </div>
+    </div>
+    
+
+      <!-- drop-down section -->
+      <section class="selection-section">
+        <div class="icon-heading-container">
+            <div class="icon-heading">
+                <i class="fas fa-car"></i>
+                <h4>CARS</h4>
+            </div>
+        </div>
+    
+        <!-- Search Form with Dropdowns -->
+        <form class="dropdown-container" id="carSearchForm">
+            <!-- Choose Driver Dropdown -->
+            <select class="form-select" name="driver">
+                <option selected>Choose Driver</option>
+                <option value="with_driver">With Driver</option>
+                <option value="without_driver">Without Driver</option>
+            </select>
+    
+            <!-- Choose Drive Dropdown -->
+            <select class="form-select" name="drive">
+                <option selected>Choose Drive</option>
+                <option value="2wd">2-Wheel Drive (2WD)</option>
+                <option value="4wd">4-Wheel Drive (4WD)</option>
+                <option value="awd">All-Wheel Drive (AWD)</option>
+                <option value="fwd">Front-Wheel Drive (FWD)</option>
+                <option value="rwd">Rear-Wheel Drive (RWD)</option>
+            </select>
+    
+            <!-- Choose Exterior Color Dropdown -->
+            <select class="form-select" name="color">
+                <option selected>Choose Exterior Color</option>
+                <option value="Pearl White">Pearl White</option>
+                <option value="white">White</option>
+                <option value="Deep Blue Pearl">Deep Blue Pearl</option>
+                <option value="Midnight Silver Mettallic">Midnight Silver Mettallic</option>
+                <option value="black">Black</option>
+                <option value="silver">Silver</option>
+                <option value="blue">Blue</option>
+                <option value="red">Red</option>
+            </select>
+    
+            <!-- Choose County Dropdown -->
+            <select class="form-select" name="county">
+                <option selected>Choose County</option>
+                <!-- Add all counties in Kenya -->
+                <option value="nairobi">Nairobi</option>
+                <option value="mombasa">Mombasa</option>
+                <option value="kisumu">Kisumu</option>
+                <option value="nakuru">Nakuru</option>
+                <option value="kiambu">Kiambu</option>
+                <option value="murang'a">Murang'a</option>
+                <option value="nyeri">Nyeri</option>
+                <option value="kirinyaga">Kirinyaga</option>
+                <option value="kitui">Kitui</option>
+                <option value="machakos">Machakos</option>
+                <option value="migori">Migori</option>
+                <option value="kisii">Kisii</option>
+                <option value="elgeyo Marakwet">Elgeyo Marakwet</option>
+                <option value="tana River">Tana River</option>
+                <option value="Kilifi">Kilifi</option>
+                <option value="turkana">Turkana</option>
+                <option value="mandera">Mandera</option>
+                <option value="wajir">Wajir</option>
+                <option value="kWale">Kwale</option>
+                <!-- Add other counties as needed -->
+            </select>
+            <button type="submit" class="btn-search">SEARCH</button>
+        </form>
+    </section>
+    <hr>
+<!-- car details and images -->
+    <div class="slider-container2">
+        <h2>FEATURED ITEMS</h2>
+    <div class="slider">
+      <div class="card-slide">
+        <div class="car-card">
+            <a href="car-details.html?id=1" class="car-card-link">
+              <div class="car-image">
+                <img src="Assets/images/Toyota 2020.jpg" alt="Toyota Land Cruiser 2020">
+                <span class="label" style="background-color: #ffc107;">GOLD</span>
+              </div>
+              <div class="car-details">
+                <h3><b>Toyota Land Cruiser 2020</b></h3>
+                <p class="condition">Condition: Used</p>
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Nairobi County</p>
+                <p>Diesel Engine, 4WD, 2800cc, Automatic</p>
+                <button class="price-btn" onclick="initiatePayment(1)">KSh.9,745</button>
+                <div class="icons">
+                    <a href="tel:+254750542046"><i class="fas fa-phone"></i></a>
+                    <a href="https://wa.me/254750542046"><i class="fab fa-whatsapp"></i></a>
+                    <a href="info.sankhultd@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </a>
+        </div>
+
+                <div class="car-card">
+                    <a href="car-details.html?id=2" class="car-card-link">
+                        <div class="car-image">
+                            <img src="Assets/images/Honda Civic 2019.jpg" alt="Honda Civic 2019"> 
+                            <span class="label" style="background-color: #00fabb;">Bronze</span>
+                        </div>
+                        <div class="car-details">
+                            <h3><b>Honda Civic 2019</b></h3> 
+                            <p class="condition">Condition: New</p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> Mombasa</p> 
+                            <p>Engine: Petrol,1800cc</p> 
+                            <button class="price-btn">KSh. 6,500.00</button>
+                            <div class="icons">
+                                <a href="tel:+254750542046"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/254750542046"><i class="fab fa-whatsapp"></i></a>
+                                <a href="info.sankhultd@gmail.com"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="car-card">
+                    <a href="car-details.html?id=3" class="car-card-link">
+                        <div class="car-image">
+                            <img src="Assets/images/Ford Mustang 2021.jpg" alt="Ford Mustang 2021"> 
+                            <span class="label" style=" background-color: silver;">Silver</span>
+                        </div>
+                        <div class="car-details">
+                            <h3><b>Ford Mustang 2021</b></h3> 
+                            <p class="condition">Condition:Certified Pre-Owned</p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> Kisumu</p> 
+                            <p>Engine: Petrol, 5000cc.</p> 
+                            <button class="price-btn">KSh. 11,000</button>
+                            <div class="icons">
+                                <a href="tel:+254750542046"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/254750542046"><i class="fab fa-whatsapp"></i></a>
+                                <a href="info.sankhultd@gmail.com"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                </div>
+            <div class="card-slide">
+                <div class="car-card">
+                    <a href="car-details.html?id=4" class="car-card-link">
+                        <div class="car-image">
+                            <img src="Assets/images/Mazda CX-5 2022.jpeg" alt="Mazda CX-5 2022">
+                            <span class="label" style=" background-color: silver;">Silver</span>
+                        </div>
+                        <div class="car-details">
+                            <h3><b>Mazda CX-5 2022</b></h3> 
+                            <p class="condition">Condition:New</p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> Location</p> 
+                            <p>Engine: Petrol, 2000cc</p> 
+                            <button class="price-btn">KSh. 18,500.00</button>
+                            <div class="icons">
+                                <a href="tel:+254750542046"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/254750542046"><i class="fab fa-whatsapp"></i></a>
+                                <a href="info.sankhultd@gmail.com"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="car-card">
+                    <a href="car-details.html?id=5" class="car-card-link">
+                        <div class="car-image">
+                            <img src="Assets/images/BMW 3 Series 2018.jpeg" alt="BMW 3 Series 2018"> 
+                            <span class="label" style="background-color: #ffc107;">GOLD</span>
+                        </div>
+                        <div class="car-details">
+                            <h3><b>BMW 3 Series 2018</b></h3> 
+                            <p class="condition">Condition: Used</p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i>  Eldoret</p> 
+                            <p>Engine: Diesel, 2000cc</p> 
+                            <button class="price-btn">KSh.20,000</button>
+                            <div class="icons">
+                                <a href="tel:+254750542046"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/254750542046"><i class="fab fa-whatsapp"></i></a>
+                                <a href="info.sankhultd@gmail.com"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="car-card">
+                    <a href="car-details.html?id=6" class="car-card-link">
+                        <div class="car-image">
+                            <img src="Assets/images/Mercedes-Benz C-Class 2020.jpeg" alt="Mercedes-Benz C-Class 2020"> 
+                            <span class="label" style="background-color: #ffc107;">GOLD</span>
+                        </div>
+                        <div class="car-details">
+                            <h3><b>Mercedes-Benz C-Class 2020</b></h3> 
+                            <p class="condition">Condition:Certified Pre-Owned</p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> Thika</p> 
+                            <p>Engine: Petrol, 2500cc</p> 
+                            <button class="price-btn">KSh. 19,000</button>
+                            <div class="icons">
+                                <a href="tel:+254700000000"><i class="fas fa-phone"></i></a>
+                                <a href="https://wa.me/254700000000"><i class="fab fa-whatsapp"></i></a>
+                                <a href="mailto:info@example.com"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                </div>
+        </div>
+        <div class="slider-controls">
+        <button class="prev" onclick="slidePrev()">&lt;</button>
+<button class="next" onclick="slideNext()">&gt;</button>
+    </div>
+</div>
+<!-- BROWSE ITEMS  CARS-->
+ <hr>
+ <!-- Why Choose Us -->
+ <section class="why-choose-us">
+    <h2>Why Choose Us</h2>
+    <div class="reasons">
+        <div class="reason">
+            <div class="icon-2">
+                <i class="fas fa-tags"></i> <!-- Financing Icon -->
+            </div>
+            <h3>Financing Made Easy</h3>
+            <p>Our stress-free finance department that can find financial solutions to save you money.</p>
+        </div>
+        <div class="reason">
+            <div class="icon-2">
+                <i class="fas fa-car"></i> <!-- Brands Icon -->
+            </div>
+            <h3>Wide Range of Brands</h3>
+            <p>With a robust selection of popular vehicles on hand, as well as leading vehicles from BMW and Ford.</p>
+        </div>
+        <div class="reason">
+            <div class="icon-2">
+                <i class="fas fa-users"></i> <!-- Trusted Icon -->
+            </div>
+            <h3>Trusted by Thousands</h3>
+            <p>10 new offers every day. 350 offers on site, trusted by a community of thousands of users.</p>
+        </div>
+        <div class="reason">
+            <div class="icon-2">
+                <i class="fas fa-tools"></i> <!-- Maintenance Icon -->
+            </div>
+            <h3>Car Service & Maintenance</h3>
+            <p>Our service department maintains your car to stay safe on the road for many more years.</p>
+        </div>
+    </div>
+        <div class="learn-more">
+            <a href="about.html" class="learn-more-btn">
+                <i class="fas fa-info-circle"></i> Learn More
+            </a>
+        </div>        
+</section>
+<!-- BROWSE BY ITEMS -->
+
+
+<div class="highlighted-items-carousel">
+    <h2>Car Listings</h2>
+    <div class="item-vertical-slider">
+        <div class="item-card-slide">
+            <!-- Car Card 1 -->
+            <div class="vehicle-card">
+                <div class="vehicle-thumbnail">
+                    <img src="Assets/images/Porsche 911 Carrera 4 1998.jpeg" alt="Porsche 911 Carrera">
+                    <span class="label" style="background-color: #ffc107;">GOLD</span>
+                </div>
+                <div class="vehicle-details">
+                    <h3><b>Porsche 911 Carrera 4 1998</b></h3>
+                    <p class="condition">Condition: Certified Pre-Owned</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Nairobi County</p>
+                    <p><i class="fas fa-cogs"></i> Manual | <i class="fas fa-car"></i> Petrol, 3400cc</p>
+                    <button class="price-btn">KSh.74,000</button>
+                </div>
+        </div>
+        <!-- Car Card 2 -->
+        <div class="vehicle-card">
+            <div class="vehicle-thumbnail">
+                    <img src="Assets/images/Chevrolet Impala SS 1967.jpeg" alt="Chevrolet Impala SS">
+                    <span class="label" style="background-color: #00fabb;">Bronze</span>
+                </div>
+                <div class="vehicle-details">
+                    <h3><b>Chevrolet Impala SS 1967</b></h3>
+                    <p class="condition">Condition: Restored</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Nairobi</p>
+                    <p><i class="fas fa-cogs"></i> Manual | <i class="fas fa-car"></i> Petrol, V8, 5700cc</p>
+                    <button class="price-btn">KSh.35,000</button>
+                </div>
+
+        </div>
+        <!-- Car Card 3 -->
+        <div class="vehicle-card">
+            <div class="vehicle-thumbnail">
+                    <img src="Assets/images/Jaguar E-Type 1961.jpeg" alt="Jaguar E-Type 196">
+                    <span class="label" style="background-color: #00fabd">Bronze</span>
+                </div>
+                <div class="vehicle-details">
+                    <h3><b>Jaguar E-Type 1961</b></h3>
+                    <p class="condition">Condition: Restored</p>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Nanyuki</p>
+                    <p><i class="fas fa-cogs"></i> Manual | <i class="fas fa-car"></i> Petrol, 3800cc</p>
+                    <button class="price-btn">KSh.25,000</button>
+                </div>
+                </div>
+
+        <!-- Car Card 4 -->
+        <div class="vehicle-card">
+            <div class="vehicle-thumbnail">
+                <img src="Assets/images/Bentley 4½ Litre 1928.jpeg" alt="Bentley 4½ ">
+                <span class="label" style=" background-color: #c0c0c0;">Silver</span>
+            </div>
+            <div class="vehicle-details">
+                <h3><b>Bentley 4½ Litre 1928</b></h3>
+                <p class="condition">Condition: Restored</p>
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Kitale</p>
+                <p><i class="fas fa-cogs"></i> Automatic | <i class="fas fa-car"></i> Petrol, 4398cc</p>
+                <button class="price-btn">KSh.50,000</button>
+            </div>
+    </div>
+    <!-- Car Card 5 -->
+    <div class="vehicle-card">
+        <div class="vehicle-thumbnail">
+                <img src="Assets/images/Honda Accord 2014.jpeg" alt="Honda Civic 2019 ">
+                <span class="label" style=" background-color: #00fabb;">Bronze</span>
+
+            </div>
+            <div class="vehicle-details">
+                <h3><b>Honda Civic 2019</b></h3>
+                <p class="condition">Condition: Restored</p>
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Kitale</p>
+                <p><i class="fas fa-cogs"></i> Automatic | <i class="fas fa-car"></i> Petrol, 4398cc</p>
+                <button class="price-btn">KSh.10,000</button>
+            </div>
+    </div>
+    <!-- Car Card 6  -->
+    <div class="vehicle-card">
+        <div class="vehicle-thumbnail">
+                <img src="Assets/images/Bentley.jpeg" alt="Bentley ">
+                <span class="label" style=" background-color: #ffc107;">Gold</span>
+            </div>
+            <div class="vehicle-details">
+                <h3><b>Bentley</b></h3>
+                <p class="condition">Condition: New</p>
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Mombasa</p>
+                <p><i class="fas fa-cogs"></i> Automatic | <i class="fas fa-car"></i> Petrol, 4398cc</p>
+                <button class="price-btn">KSh.73,000</button>
+            </div>
+    </div>
+    <!-- Car Card 7 -->
+    <div class="vehicle-card">
+        <div class="vehicle-thumbnail">
+                <img src="Assets/images/Mazda CX-5 2022.jpeg" alt="Mazda CX-5 2022 ">
+                <span class="label" style=" background-color: #c0c0c0;">Silver</span>
+            </div>
+            <div class="vehicle-details">
+                <h3><b>Mazda CX-5 2022</b></h3>
+                <p class="condition">Condition: New</p>
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Mombasa</p>
+                <p><i class="fas fa-cogs"></i> Automatic | <i class="fas fa-car"></i> Petrol, 3098cc</p>
+                <button class="price-btn">KSh.13,000</button>
+            </div>
+    </div>
+    <!-- Car Card 8 -->
+    <div class="vehicle-card">
+        <div class="vehicle-thumbnail">
+                <img src="Assets/images/Rolls-Royce Phantom II 1930.jpeg" alt="Rolls-Royce Phantom II ">
+                <span class="label" style=" background-color: #ffc107;">Gold</span>
+            </div>
+            <div class="vehicle-details">
+                <h3><b>Rolls-Royce Phantom II</b></h3>
+                <p class="condition">Condition: New</p>
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Nairobi</p>
+                <p><i class="fas fa-cogs"></i> Automatic | <i class="fas fa-car"></i> Petrol, 3700cc</p>
+                <button class="price-btn">KSh.77,000</button>
+            </div>
+    </div>
+    <!-- Car Card 9 -->
+    <div class="vehicle-card">
+        <div class="vehicle-thumbnail">
+                <img src="Assets/images/Subaru Forester 2020.jpeg" alt="Subaru Forester 2020">
+                <span class="label" style=" background-color: #00fabb;">Bronze</span>
+            </div>
+            <div class="vehicle-details">
+                <h3><b>Subaru Forester 2020</b></h3>
+                <p class="condition">Condition: New</p>
+                <p class="location"><i class="fas fa-map-marker-alt"></i>kisumu</p>
+                <p><i class="fas fa-cogs"></i> Automatic | <i class="fas fa-car"></i> Petrol, 4OOOcc</p>
+                <button class="price-btn">KSh.9,000</button>
+            </div>
+    </div>     
+        
+</div>
+</div>
+<div class="pagination">
+    <button class="pagination-button active" data-slide="1">1</button>
+    <button class="pagination-button" data-slide="2">2</button>
+    <button class="pagination-button" data-slide="3">3</button>
+</div>
+</div>
+
+<!-- BLOG SECTION -->
+ <hr>
+<section class="blog">
+    <div class="container">
+        <h2>From Our Blog</h2>
+        <p>Our blog is here with carefully picked tips, tricks, and guides to get you to your destination  <br>and turn your adventures into the best experience.</p>
+        <div class="blog-posts">
+            <div class="post">
+                <img src="Assets/images/blog2.jpg" alt="Road Trip">
+                <div class="post-content">
+                    <div class="date">07 Feb</div>
+                    <h3><b>Top 5 Scenic Road Trips to Take in Kenya</b></h3>
+                    <p>Kenya is a land of stunning landscapes, vibrant wildlife, and diverse cultures. One of the best ways to experience the beauty of this country is through a road trip...</p>
+                </div>
+            </div>
+            <div class="post">
+                <img src="Assets/images/dark car.jpg" alt="Family Gate Away">
+                <div class="post-content">
+                    <div class="date">21 June</div>
+                    <h3><b>Top 5 Scenic Road Trips to Take in Kenya</b></h3>
+                    <p>Kenya is a land of stunning landscapes, vibrant wildlife, and diverse cultures. One of the best ways to experience the beauty of this country is through a road trip...</p>
+                </div>
+            </div>
+            <div class="post">
+                <img src="Assets/images/BLOG 3.jpg" alt="Car Rental Tips">
+                <div class="post-content">
+                    <div class="date">06 Feb</div>
+                    <h3><b>10 Tips for a Stress-Free Car Rental Experience</b></h3>
+                    <p>Renting a car can significantly enhance your travel experience by providing convenience and flexibility...</p>
+                </div>
+            </div>
+            <div class="post">
+                <img src="Assets/images/wed 1.jpg" alt="Business Travel">
+                <div class="post-content">
+                    <div class="date">30 Jan</div>
+                    <h3><b>The Benefits of Renting a Car for Business Travel</b></h3>
+                    <p>Business travel often involves tight schedules and multiple destinations. Renting a car can provide numerous benefits...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<hr>
+<!-- FOOTER SECTION -->
+<footer>
+</div>
+<ul class="social-icons">
+    <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+    <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+    <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+    <li><a href="https://wa.me/254750542046"><ion-icon name="logo-whatsapp"></ion-icon></a></li>
+</ul>
+<ul class="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="addyourcar.html">Add Your Car!</a></li>
+    <li><a href="contacts.html">Contact Us</a></li>
+</ul>
+<p>@2024 Sankhoo Cars | All Rights Reserved. </p>
+
+</footer>
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!--link to Js  -->
+    <script src="script.js"></script>
+    <script src="popup.js"></script>
+    <script src="footer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html> 

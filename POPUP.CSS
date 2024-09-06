@@ -1,0 +1,76 @@
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 350px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+}
+
+.close-btn {
+    color: #ff0000;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #555;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #00fabd;
+    color: white;
+    padding: 12px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: gold;
+}
+
+.toggle-link {
+    margin-top: 15px;
+}
+
+.toggle-link button {
+    background: none;
+    border: none;
+    color: #00fabd;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.toggle-link button:hover {
+    color: gold;
+}

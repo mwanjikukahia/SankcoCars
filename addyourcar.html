@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sankhco</title>
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="addyourcar.css">
+</head>
+<body>
+    
+    <!-- header -->
+    <header>
+        <div class="logo"><img src="Assets/images/logo-removebg-preview.png" alt=""width="200px" height="100px">
+       </div>
+   
+        <ul class="navbar" id="navbar">
+           <li><a href="index.html">Home</a></li>
+           <li><a href="about.html">About</a></li>
+           <li><a href="cars.html">Cars</a></li>
+           <li><a href="contacts.html">Contact Us</a></li>
+   
+           <li><a href="addyourcar.html">
+               <i class="fas fa-car"></i>ADD YOU CAR</a></li>
+        
+           <li><a href="javascript:void(0)" class="sign-up" onclick="openPopup()">
+               <i class="fas fa-user-plus"></i>Create Account</a>
+           </li>
+       
+       </ul>
+   
+        <div class="bx bx-menu" id="menu-icon"></div>
+       </header>
+    <!-- BODY -->
+    <div class="main">
+        <h1>List Your Car!</h1>
+        </div>
+        <hr>
+
+        <form action="process_subscription.php" method="post">
+            <h2>Subscription Options</h2>
+            
+            <!-- Subscription Type -->
+            <label for="subscription-type">Subscription Type:</label>
+            <select id="subscription-type" name="subscription_type" onchange="toggleSubscriptionPlans()" required>
+                <option value="">Select Type</option>
+                <option value="individual">Individual</option>
+                <option value="company">Company</option>
+            </select>
+            
+            <!-- Individual Plans -->
+            <div id="individual-plans" style="display: none;">
+                <h3>Individual Plans</h3>
+                <label for="individual-plan">Choose a Plan:</label>
+                <select id="individual-plan" name="individual_plan">
+                    <option value="trial">Trial Plan (1 week - 1 post)</option>
+                    <option value="gold">Gold (Ksh 5000 - 1 post per month)</option>
+                    <option value="silver">Silver (Ksh 3000 - 1 post per month)</option>
+                    <option value="bronze">Bronze (Ksh 1500 - 1 post per month)</option>
+                </select>
+
+                <label for="individual-kra-pin">KRA Pin:</label>
+                <input type="text" id="individual-kra-pin" name="individual_kra_pin" required>
+
+                <label for="individual-id">National ID:</label>
+                <input type="text" id="individual-id" name="individual_id" required>
+            </div>
+
+            <!-- Company Plans -->
+            <div id="company-plans" style="display: none;">
+                <h3>Company Plans</h3>
+                <label for="company-plan">Choose a Plan:</label>
+                <select id="company-plan" name="company_plan">
+                    <option value="basic">Basic Plan (Ksh 5000 - List up to 3 cars)</option>
+                    <option value="diamond">Diamond Plan (Ksh 15,000 - List up to 6 cars)</option>
+                    <option value="premium">Premium Plan (Ksh 35,000 - List up to 12 cars)</option>
+                </select>
+
+                <label for="company-kra-pin">KRA Pin Certificate:</label>
+                <input type="file" id="company-kra-pin" name="company_kra_pin" accept="image/*,application/pdf" required>
+
+                <label for="company-incorporation">Company Certificate of Incorporation:</label>
+                <input type="file" id="company-incorporation" name="company_incorporation" accept="image/*,application/pdf" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Subscription</button>
+        </form>
+
+        <!-- Car Rental Listing Form -->
+        <form action="process_rental.php" method="post" enctype="multipart/form-data">
+            <!-- Previous car rental form content goes here... -->
+        </form>
+    </div>
+
+
+        <div class="form-container">
+            <form action="process_rental.php" method="post" enctype="multipart/form-data">
+                <!-- Step 1: Personal Information -->
+                <div class="form-step" id="step-1">
+                    <h2>Personal Information</h2>
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" name="full_name" required>
+    
+                    <label for="license-number">Driver's License Number:</label>
+                    <input type="text" id="license-number" name="license_number" required>
+    
+                    <label for="id-passport-number">National ID/Passport Number:</label>
+                    <input type="text" id="id-passport-number" name="id_passport_number" required>
+    
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+    
+                    <label for="phone-number">Phone Number:</label>
+                    <input type="text" id="phone-number" name="phone_number" required>
+                    
+                    <button type="button" class="next-step" onclick="nextStep(2)">Next</button>
+                </div>
+    
+                <!-- Step 2: Rental Details -->
+                <div class="form-step" id="step-2">
+                    <h2>Rental Details</h2>
+                    <label for="pickup-date">Pickup Date & Time:</label>
+                    <input type="datetime-local" id="pickup-date" name="pickup_date" required>
+    
+                    <label for="return-date">Return Date & Time:</label>
+                    <input type="datetime-local" id="return-date" name="return_date" required>
+    
+                    <label for="car-model">Car Model:</label>
+                    <select id="car-model" name="car_model" required>
+                        <option value="">Select Model</option>
+                        <!-- Add car model options here -->
+                    </select>
+    
+                    <label for="transmission-type">Transmission Type:</label>
+                    <select id="transmission-type" name="transmission_type" required>
+                        <option value="">Select Transmission</option>
+                        <!-- Add transmission options here -->
+                    </select>
+    
+                    <label for="drive-type">Drive Type:</label>
+                    <select id="drive-type" name="drive_type" required>
+                        <option value="">Select Drive</option>
+                        <!-- Add drive options here -->
+                    </select>
+    
+                    <label for="pickup-location">Pickup Location:</label>
+                    <select id="pickup-location" name="pickup_location" required>
+                        <option value="">Select Location</option>
+                        <!-- Add location options here -->
+                    </select>
+    
+                    <button type="button" class="prev-step" onclick="prevStep(1)">Previous</button>
+                    <button type="button" class="next-step" onclick="nextStep(3)">Next</button>
+                </div>
+    
+                <!-- Step 3: Required Documents -->
+                <div class="form-step" id="step-3">
+                    <h2>Required Documents</h2>
+                    <label for="license-upload">Upload Driver's License:</label>
+                    <input type="file" id="license-upload" name="license_upload" accept="image/*,application/pdf" required>
+    
+                    <label for="id-passport-upload">Upload National ID/Passport:</label>
+                    <input type="file" id="id-passport-upload" name="id_passport_upload" accept="image/*,application/pdf" required>
+    
+                    <label for="insurance-upload">Upload Insurance Information:</label>
+                    <input type="file" id="insurance-upload" name="insurance_upload" accept="image/*,application/pdf" required>
+    
+                    <label for="utility-bill-upload">Upload Utility Bill/Proof of Residence:</label>
+                    <input type="file" id="utility-bill-upload" name="utility_bill_upload" accept="image/*,application/pdf" required>
+                    
+                    <label for="car-photos">Upload Car Photos (Min 3):</label>
+                    <input type="file" id="car-photos" name="car_photos[]" accept="image/*" multiple required>
+    
+                    <button type="button" class="prev-step" onclick="prevStep(2)">Previous</button>
+                    <button type="button" class="next-step" onclick="nextStep(4)">Next</button>
+                </div>
+    
+                <!-- Step 4: Payment & Additional Options -->
+                <div class="form-step" id="step-4">
+                    <h2>Payment & Additional Options</h2>
+                    <label for="credit-card">Credit Card Information:</label>
+                    <input type="text" id="credit-card" name="credit_card" required>
+    
+                    <label for="insurance-coverage">Insurance Coverage:</label>
+                    <input type="radio" id="full-coverage" name="insurance_coverage" value="full" required>
+                    <label for="full-coverage">Full Coverage</label>
+                    <input type="radio" id="basic-coverage" name="insurance_coverage" value="basic">
+                    <label for="basic-coverage">Basic Coverage</label>
+    
+                    <label for="gps-navigation">
+                        <input type="checkbox" id="gps-navigation" name="additional_options[]" value="gps_navigation">
+                        GPS Navigation
+                    </label>
+    
+                    <label for="baby-seat">
+                        <input type="checkbox" id="baby-seat" name="additional_options[]" value="baby_seat">
+                        Baby Seat
+                    </label>
+    
+                    <label for="additional-driver">
+                        <input type="checkbox" id="additional-driver" name="additional_options[]" value="additional_driver">
+                        Additional Driver
+                    </label>
+    
+                    <button type="button" class="prev-step" onclick="prevStep(3)">Previous</button>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </div>
+            </form>
+        </div>
+
+     <!-- FOOTER -->
+     <footer>
+    </div>
+    <ul class="social-icons">
+        <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+        <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+        <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+        <li><a href="https://wa.me/254750542046"><ion-icon name="logo-whatsapp"></ion-icon></a></li>
+    </ul>
+    <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="addyourcar.html">Add Your Car!</a></li>
+        <li><a href="contacts.html">Contact Us</a></li>
+    </ul>
+    <p>@2024 Sankhoo Cars | All Rights Reserved. </p>
+
+</footer>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!--link to Js  -->
+    <script src="script.js"></script>
+    <SCript src="addyourcar.js"></SCript>
+    <script src="popup.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html> 

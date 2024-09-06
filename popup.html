@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="POPUP.CSS">
+</head>
+<body>
+    <ul class="navbar" id="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cars.html">Cars</a></li>
+        <li><a href="contacts.html">Contact Us</a></li>
+
+        <li><a href="addyourcar.html">
+            <i class="fas fa-car"></i>ADD YOU CAR</a></li>
+     
+        <li><a href="javascript:void(0)" class="sign-up" onclick="openPopup()">
+            <i class="fas fa-user-plus"></i>Create Account</a>
+        </li>
+    
+    </ul>
+    
+    <div class="modal-content">
+        <span class="close-btn" id="close-modal">&times;</span>
+        <!-- Login Form -->
+        <div id="login-form">
+            <h2>Login</h2>
+            <form id="loginForm" onsubmit="login(event)">
+                <input type="text" placeholder="Enter Email or Username" id="login-email" required>
+                <input type="password" placeholder="Enter Password" id="login-password" required>
+                <label>
+                    <input type="checkbox" id="remember-me"> Remember Me
+                </label>
+                <button type="submit">Login</button>
+                <p>Don’t have an account? <button type="button" class="toggle-register-btn">Register</button></p>
+            </form>
+        </div>
+        <!-- Register Form -->
+        <div id="register-form" style="display: none;">
+            <h2>Register</h2>
+            <form id="registerForm" onsubmit="register(event)">
+                <input type="text" placeholder="Full Name" id="register-name" required>
+                <input type="email" placeholder="E-mail" id="register-email" required>
+                <input type="password" placeholder="Password" id="register-password" required>
+                <button type="submit">Register</button>
+                <p>Already have an account? <button type="button" class="toggle-login-btn">Login</button></p>
+            </form>
+        </div>
+    </div>
+<script src="popup.js"></script>
+</body>
+</html>
